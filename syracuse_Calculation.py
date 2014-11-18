@@ -1,5 +1,10 @@
+#!/usr/bin/python3
 import time
 outfile = open("calculations", "w")
+
+"""
+Outputs a file of how many iterations of syracuse we needed to do before
+"""
 
 def syracuse(n):
     #print("\nCalculating", n)
