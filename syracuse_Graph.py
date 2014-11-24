@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import pygtk
 from gi.repository import Gtk, Gdk
 import cairo
 from time import sleep
@@ -40,7 +39,7 @@ def introspection(inst):
 class window(Gtk.Window):
     def __init__(self):
 
-        # initialize Gtk.Window (super calls the parent class's method
+        # initialize Gtk.Window (super calls the parent class's method)
         super().__init__(title="Syracuse Graph")
         #Then initialize our init
         self.init_ui()
@@ -84,6 +83,8 @@ class window(Gtk.Window):
                 self.coordinateFrequency[(x,y)] = 1
             cairoCon.rectangle(x,y,.01,.01)
             cairoCon.stroke()
+        #Attempt to make certain spots look larger if alot of points have
+        #already been placed.
         for i in self.coordinateFrequency.keys():
             if self.coordinateFrequency[i] > 1:
                 print(i, self.coordinateFrequency[i])
